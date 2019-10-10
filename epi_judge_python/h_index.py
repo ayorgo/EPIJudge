@@ -2,8 +2,12 @@ from test_framework import generic_test
 
 
 def h_index(citations):
-    # TODO - you fill in here.
-    return 0
+    count = 0
+    for citation in reversed(sorted(citations)):
+        if citation <= count:
+            return count
+        count += 1
+    return count
 
 
 if __name__ == '__main__':
